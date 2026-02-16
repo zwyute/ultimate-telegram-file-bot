@@ -38,3 +38,13 @@ async def handle_stats(client, message):
 if __name__ == "__main__":
     print("Bot is running...")
     app.run()
+
+import threading
+import time
+
+def heartbeat():
+    while True:
+        print("Bot is alive...")
+        time.sleep(15)
+
+threading.Thread(target=heartbeat, daemon=True).start()
